@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style media="screen">
+		.move{
+			position: absolute;
+		  top: 30px;
+			left:500px;
+			width: 400px;
+		}
+		.f1_container {
+		    position: relative;
+		    margin:10px;
+		    width: 380px;
+		    height: 200px;
+		    z-index : 1;
+		    float:left;
+
+		}
+		.f1_container {
+		    -webkit-perspective: 1000;
+		    perspective: 1000;
+
+		}
+		.f1_card {
+		    width: 100%;
+		    height: 100%;
+		    -webkit-transform-style: preserve-3d;
+		    -webkit-transition: all 1.0s linear;
+		    transform-style: preserve-3d;
+		    transition: all 1.0s linear;
+
+		}
+		.f1_container.active .f1_card {
+		    -webkit-transform: rotateY(180deg);
+		    transform: rotateY(180deg);
+		    box-shadow: -5px 5px 5px #aaa;
+      border-radius: 20px;
+		}
+		.face {
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    backface-visibility: hidden;
+		    -webkit-backface-visibility: hidden;
+        border-radius: 20px;
+		}
+		.face.back {
+		    display: block;
+		    -webkit-transform: rotateY(180deg);
+		    transform: rotateY(180deg);
+		    box-sizing: border-box;
+		    color: white;
+		    text-align: center;
+		    background-color: #aaa;
+
+		}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="move">
+			<form class="" action="index.html" method="post">
+				<label for="">Enter card ownername: </label>
+	    <input type="text" id="cardowner"name="cardowner" value="" style="margin-left:6px;">
+			<br>
+			<br>
+			<label for="">Enter card number: </label>
+			<input type="text"id="cardnumber" name="cardnumber" value="" pattern="[0-9]{16}" title="Please enter 16 digit number" style="margin-left: 30px;">
+			<br>
+			<br>
+			<label for="">Enter expiring date:</label>
+			<input type="text" id="year" name="month/year" value=""  style="margin-left: 28px;">
+			<br>
+			<br>
+			<label for="">Enter CVV:</label>
+			<input type="text" id="cvv1"name="cvv" value="" style="margin-left: 78px;">
+			<br>
+			<br>
+			<input type="submit" name="" value="submit">
+			</form>
+		</div>
+
+		<div class="f1_container">
+    <div class="shadow f1_card">
+        <div class="front face">
+            <img src="card.jpg" style="height: 200px; width: 380px; border-radius:20px;cursor:pointer;"  />
+						<input type="text" name="" value="" id="number"placeholder="cardnumber"style="background:transparent;position:absolute;top:110px;left:10px;color:white;width:90%;border:none;">
+						<input type="text" name="" value="" id="owner"placeholder="owner"style="background:transparent;position:absolute;top:170px;left:10px;color:white;border:none;">
+						<input type="text" name="" value=""id="month"placeholder="MM/YY"style="background:transparent;position:absolute;top:150px;left:250px;color:white; width:50px;border:none;">
+        </div>
+        <div class="back face center">
+        	<img src="card_back.jpg" alt="" style="height: 200px; width: 380px; border-radius:20px;cursor:pointer;">
+					<input type="text" name="" value="" id="cvv"placeholder="921"style="background:white;border:none;position:absolute;top:30px;left:270px;color:black;width:40px;height:30px;">
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$('.f1_container').click(function() {
+$(this).toggleClass('active');
+});
+$('#cvv1').click(function(){
+	$('.f1_container').toggleClass('active');
+})
+$("#cardowner").keyup(function(){
+    $("#owner").val(this.value);
+});
+$("#cardnumber").keyup(function(){
+    $("#number").val(this.value);
+});
+$("#year").keyup(function(){
+    $("#month").val(this.value);
+});
+$("#cvv1").keyup(function(){
+    $("#cvv").val(this.value);
+});
+
+</script>
+	</body>
+</html>

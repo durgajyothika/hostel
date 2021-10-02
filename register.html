@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <style media="screen">
+    body{
+      font-family: 'Poppins',sans-serif;
+      margin: -20px 0 0 0;
+      padding: 0;
+    }
+       .title{
+         text-align: center;
+         background-color: #548CA8;
+         width: 1366px;
+         color: #fff;
+         height: 100px;
+         padding-top: 15px;
+         font-weight: bold;
+
+       }
+
+      table{
+        margin-top: 50px;
+      }
+      .register{
+        margin-top: 30px;
+        width: 150px;
+        font-weight: bold;
+
+      }
+      .back{
+        position: absolute;
+        top:20px;
+        left: 1100px;
+        width: 100px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <form  action="home.html" method="post">
+      <button  type="submit" class="btn btn-danger back"name="button">BACK</button>
+    </form>
+    <center>
+
+
+   <form class="" action="register.jsp" method="post">
+     <div class="title">
+        <h1>STUDENT REGISTRATION FORM</h1>
+     </div>
+
+     <table>
+
+     <tr>
+       <td><label for="name">Enter Your Name:</label></td>
+       <td><input type="text" name="name" value=""></td>
+     </tr>
+     <tr>
+       <td><label for="fname">Enter Your Fathername:</label></td>
+       <td><input type="text" name="fname" value=""></td>
+     </tr>
+     <tr>
+       <td><label for="mname">Enter Your Mothername:</label></td>
+       <td><input type="text" name="mname" value=""></td>
+     </tr>
+     <tr>
+       <td><label for="Age">Enter Your Age:</label></td>
+       <td><input type="number" name="age" min="0"></td>
+     </tr>
+     <tr>
+       <td><label for="address">Enter Your Address:</label></td>
+       <td><textarea name="address" rows="5" cols="20"></textarea></td>
+     </tr>
+     <tr>
+       <td><label for="Phoneno">Enter Your Phoneno:</label></td>
+       <td><input type="text" name="Phoneno" value="" pattern="[0-9]{10}" title="Please Enter 10digit  phonenumber"></td>
+     </tr>
+    <tr>
+      <td><label for="FatherPhoneno">Enter Your FatherPhoneno:</label></td>
+      <td>
+        <input type="text" name="FatherPhoneno" value="" pattern="[0-9]{10}"title="Please Enter 10digit  phonenumber">
+      </td>
+    </tr>
+     <tr>
+       <td><label for="Dept">Select Your Dept:</label></td>
+       <td><select class="" name="Dept">
+        <option value="cse" selected>CSE</option>
+        <option value="ece">ECE</option>
+        <option value="mech">MECH</option>
+        <option value="eee">EEE</option>
+        <option value="civil">CIVIL</option>
+       </select></td>
+     </tr>
+     <tr>
+       <td><label for="yearOfStudy">Enter Your Yearofstudy:</label></td>
+       <td><div class="form-group">
+   <div class='input-group date' >
+    <input type="text" name="yearOfStudy" id="yearPicker">
+   </div>
+</div>   </td>
+
+     </tr>
+
+     <tr>
+       <td><label for="Password">Enter Password:</label></td>
+       <td><input type="password" id="Password" name="pwd" value=""></td>
+     </tr>
+     <tr>
+       <td><label for="">Confrim Password:</label></td>
+       <td><input type="password" name="cpwd" id="Password1">
+       </td>
+     </tr>
+     <tr>
+       <td></td>
+       <td><input type="checkbox" id="checkbox1" onclick="myFunction()"> ShowPassword</td>
+     </tr>
+     </table>
+
+       <button type="submit" class="btn btn-primary register">Register</button>
+
+
+
+   </form>
+ </center>
+ <script>
+ function myFunction() {
+   var x = document.getElementById("Password");
+   var y=document.getElementById('Password1')
+   if (x.type === "password" && y.type === "password") {
+     x.type = "text";
+     y.type="text";
+   } else {
+     x.type = "password";
+     y.type="password"
+   }
+ }
+
+ $('#yearPicker').datetimepicker({
+   format      :   "YYYY",
+   viewMode    :   "years",
+});
+
+ </script>
+  </body>
+</html>

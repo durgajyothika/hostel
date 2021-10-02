@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href=
+  'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+  		rel='stylesheet'>
+
+  	<script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+  	</script>
+
+  	<script src=
+  "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" >
+  	</script>
+    <script defer src="https://use.fontawesome.com/releases/v5.13.1/js/all.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script type="text/javascript">
+    $(function(){
+      $("select").change(function(){
+        var ctype=$("select")[0].value;
+        if(ctype==="Card"){
+          $("#hide").css("display","block");
+        }
+    });
+  });
+  </script>
+  </head>
+  <body>
+    <select class="" name="ptype">
+      <option value="cash">Cash</option>
+      <option value="check">Check</option>
+      <option value="Card">Card</option>
+    </select>
+    <div id="hide" style="display:none;" >
+      <label for="">Enter CardHolderName:</label>
+
+      <input type="text" name="" value="">
+      <br>
+      <label for="">Enter CardNumber:</label>
+
+      <input type="text"pattern="[0-9]{16}" title="Please Enter 16 digit number"name="" value="">
+      <br>
+      <label for="">Expiration(mm/yy)</label>
+      <input type="text" name="" placeholder="MM/YY"value=""style="width:70px;">
+      <br>
+     <label for="">SecurityCode(cvv)?:</label>
+     <input type="text" name="" value="" style="width:40px;">
+    </div>
+  </body>
+</html>
